@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "lFcBN2mqzQzlSGYOk6pSP"
+uri = "file://artifacts/bonilla-tours/assets/images/icon.png"
+type = "image"
+title = "bonilla tours app icon"

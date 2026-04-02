@@ -1,0 +1,147 @@
+Build a production-ready mobile application called “Bonilla Tour's”, a bus ticket booking app for routes from Durango to Guadalajara, Mexico.
+
+The app must be built using React Native (Expo preferred) and include:
+
+Customer app
+Admin panel (inside the same app using role-based access)
+
+The app must support guest checkout (no account required) and a full authenticated user system.
+
+Focus on real UX flows, performance, and scalability.
+
+🔐 AUTH FLOW (UPDATED)
+Entry Screen (NEW)
+
+When the user opens the app:
+
+Options:
+
+Button: Login
+Button: Create Account
+Button (secondary): Continue as Guest
+Guest Mode Rules
+User can:
+Search trips
+Select seats
+Book tickets
+User must provide:
+Name
+Email
+Phone
+No password required
+Booking is linked to email/phone instead of account
+🧭 NAVIGATION
+
+Tabs:
+
+Home
+My Trips
+Notifications
+Profile
+
+(Admin users see: Admin tab)
+
+🏠 HOME (SEARCH UX)
+
+(Same as antes, pero optimizado para guest también)
+
+💺 SEAT SELECTION (IMPORTANT UX)
+If user is guest:
+Allow full flow without forcing login
+Only request personal data at checkout
+💳 CHECKOUT (UPDATED UX CLAVE 🔥)
+
+Sections:
+
+Selected trip
+Selected seats
+Passenger details
+Dynamic form behavior:
+If logged user:
+Autofill:
+Name
+Email
+Phone
+If guest:
+Show required fields:
+Name
+Email
+Phone
+Payment options:
+Card
+Cash (reservation)
+CTA:
+
+Confirm Booking
+
+✅ SUCCESS SCREEN (UPDATED)
+Booking ID
+Trip details
+Message:
+
+If guest:
+
+“Your booking has been saved. You can access it using your email or create an account to manage your trips.”
+
+Button:
+“Create Account (optional)” 🔥
+📂 MY TRIPS (UPDATED)
+For logged users:
+Normal history
+For guests:
+Access via:
+Email + phone verification
+Show their bookings
+🔁 OPTIONAL UX IMPROVEMENT (PRO)
+
+After purchase:
+
+Prompt:
+
+“Create an account to manage your trips faster next time”
+
+Pre-fill data
+1-click account creation
+🧑‍💼 ADMIN PANEL (NO CHANGE, BUT IMPORTANT)
+
+Admin must see:
+
+Guest bookings clearly labeled
+Contact info (email/phone)
+🗄️ DATABASE LOGIC (IMPORTANT)
+
+Bookings table must support:
+
+user_id → nullable
+guest_name
+guest_email
+guest_phone
+
+Logic:
+
+If user logged → use user_id
+If guest → store guest data
+🔔 PUSH NOTIFICATIONS (UPDATED)
+For logged users:
+Normal push notifications
+For guests:
+Email notifications (required)
+Optional:
+Convert to push if they create account
+🎯 UX GOAL
+Zero friction booking
+Fast checkout
+No forced login
+Easy conversion to registered user
+💳 PAYMENTS
+
+Use:
+
+Stripe
+or
+Mercado Pago
+⚙️ FINAL REQUIREMENT
+Must include guest + auth flows
+Clean architecture
+Reusable components
+Production-ready code
